@@ -1,0 +1,6 @@
+---
+- name: working with playbooks
+  hosts: server1
+  tasks:
+    - name: working with ansible
+      command: echo "welcome to multi cloud"
