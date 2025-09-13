@@ -1,4 +1,4 @@
-def add(a,b) {
+def add(a,b=500) {
   sum = a + b 
   //return (sum)
   println "sum of a:${a} && b:{b} is, ${sum}"
