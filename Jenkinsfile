@@ -5,13 +5,18 @@ pipeline {
     stage("working with conditions") {
       steps {
         script {
-          a=10
-          b=20
-          if (a >b) {
-            println "a: ${a} is big"
+          for(i=1;i<=5;i++) {
+            println "my i value is: ${i}"
           }
-          else {
-            println "b: ${b} is big"   
+          subjects = ["aws","azure","devops","azuredevops"]
+          for(sub in subjects) {
+            println "my subject is: ${sub}"
+          }
+          j=10
+          while (j <=15) {
+            println "j value is: ${j}"
+            j = j + 1
+            
           }
         }
       }
