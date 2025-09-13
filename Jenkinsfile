@@ -1,21 +1,18 @@
-def add(a,b=500) {
-  sum = a + b 
-  //return (sum)
-  println "sum of a:${a} && b:{b} is, ${sum}"
-}
 pipeline {
-  // agent any/java/slave1/kubernetes/dockers
-  agent any
+  /*agent server1/docker/kubernetes/any*/
+  agent any 
   stages {
-    stage("working with conditions") {
+    stage('git checkout') {
       steps {
         script {
-          add(100,200)
-          add(400,500)
-          add(600)
-
+          File file = new File("/opt/mydata.txt")
+          def lines = file.readLines()
+          println "Lines\n ${lines}"
+          for (line in lines) {
+            println "myline is ${line}"
+          }
         }
       }
     }
-  }
+  } 
 }
